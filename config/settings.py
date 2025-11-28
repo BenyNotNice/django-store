@@ -61,7 +61,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "store" / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -135,8 +135,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Configuration for django-jalali-date to use Persian calendar in admin
 JALALI_DATE_DEFAULTS = {
     'Strftime': {
-        'date': '%Y/%m/%d',
-        'datetime': '%Y/%m/%d - %H:%M:%S',
+        'date': '%Y-%m-%d',  # Changed to match jalaliDatepicker separator
+        'datetime': '%Y-%m-%d %H:%M:%S',  # Changed format for consistency
     },
     'Static': {
         'js': [

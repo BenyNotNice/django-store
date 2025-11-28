@@ -14,7 +14,8 @@ class Product(models.Model):
     )
     created_at = jmodels.jDateTimeField(
         verbose_name="تاریخ ایجاد",
-        auto_now_add=True
+        # Removed auto_now_add to allow manual editing
+        # auto_now_add=True
     )
     is_active = models.BooleanField(
         default=True,
